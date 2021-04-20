@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %} {% endblock %}
+
+{% block css %}{% endblock %}
+
+{% block content %}
+<div>
+    <table class="table table-striped text-center table-bordered mobile_config">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Name</th>
+            <th scope="col">Is bot?</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.is_bot }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
+
+{% block additional_js %}{% endblock %}
