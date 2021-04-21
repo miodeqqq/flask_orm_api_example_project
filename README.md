@@ -3,7 +3,7 @@ Flask ORM Example Project
 
 **Current stable version:** v1.0.0
 
-**Release date:** 20.04.2021
+**Release date:** 21.04.2021
 
 ### Authors:
 

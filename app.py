@@ -5,7 +5,7 @@ from flask_marshmallow import Marshmallow
 from flask_restful import Api, Resource
 
 from apps.core.models import db, User
-from apps.shared.utils import read_fake_data, generate_json_data
+from apps.shared.utils import read_fake_data, generate_fake_data
 
 # ===================================================================
 # Config.
@@ -137,13 +137,11 @@ def home():
     Home page.
     """
 
-    json_path = "./json_example.json"
+    User.query.delete()
 
-    # User.query.delete()
+    fake_users_data = generate_fake_data(amount=200)
 
-    generate_json_data(amount=200, json_path=json_path)
-
-    read_fake_data(db=db, json_path=json_path)
+    read_fake_data(db=db, users_data=fake_users_data)
 
     users = User.query.all()
 

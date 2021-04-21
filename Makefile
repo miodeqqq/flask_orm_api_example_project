@@ -1,4 +1,4 @@
-.PHONY: clean tests
+.PHONY: clean
 
 clean:
 	clear; rm -rf **/*.pyc && \
@@ -15,6 +15,9 @@ clean:
 
 black:
 	clear;poetry run black .
+
+pylint:
+	clear; poetry run pylint -f colorized apps --load-plugins pylint_flask_sqlalchemy
 
 runserver:
 	clear; poetry run flask run
